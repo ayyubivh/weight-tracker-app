@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:weight_management_app/common/snackbar.dart';
 import 'package:weight_management_app/helper/helper_functions.dart';
-import 'package:weight_management_app/views/auth/service/auth_service.dart';
+import 'package:weight_management_app/service/auth_service.dart';
 import 'package:weight_management_app/views/auth/screens/auth_screen.dart';
 import '../../../common/custom_button.dart';
 import '../../../common/custom_textfield.dart';

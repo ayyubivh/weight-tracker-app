@@ -26,7 +26,7 @@ class CustomDateField extends StatelessWidget {
         ),
         child: TextField(
           controller: dateController,
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(color: kBlack, fontWeight: FontWeight.w500),
           decoration: InputDecoration(
             prefixIcon: const Icon(
               Icons.calendar_month,

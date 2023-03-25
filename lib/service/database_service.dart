@@ -30,12 +30,22 @@ class DatabaseService {
     });
   }
 
+//-=-=-=-=-=-=-=-=-=-=-=-Update weights-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+  updatWeight(weight, DateTime date) {
+    userCollection.doc(uid).update({
+      'weight': FieldValue.arrayUnion(["${weight}_$date"])
+    });
+  }
+
 //-=-=-=-=-=-=-=-=-=-=-=-Getting weights-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
   getUserWeights() async {
     return userCollection.doc(uid).snapshots();
   }
 
+//-=-=-=-=-=-=-=-=-=-=-=-Delete weights-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
   deleteWeight(weight) {
-    userCollection.doc(uid).update({'weight': FieldValue.arrayRemove(weight)});
+    userCollection.doc(uid).update({
+      'weight': FieldValue.arrayRemove(["$weight"])
+    });
   }
 }

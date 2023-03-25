@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:weight_management_app/core/routes.dart';
 import 'package:weight_management_app/helper/helper_functions.dart';
-import 'package:weight_management_app/views/auth/service/database_service.dart';
+import 'package:weight_management_app/views/auth/screens/auth_screen.dart';
+import 'package:weight_management_app/service/database_service.dart';
 
 class AuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -32,12 +34,13 @@ class AuthService {
   }
 
 //-=-=-=-=-=-=-=-=-=-=-=-Signout-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-  Future signout() async {
+  Future signout(context) async {
     try {
       await HelperFunctions.saveUserLoggedInStatus(false);
 
       await HelperFunctions.saveUserEmailSF(" ");
       await HelperFunctions.saveUserNameSF(" ");
+      nextScreenReplace(context, const AuthScreen());
     } catch (e) {
       return null;
     }
