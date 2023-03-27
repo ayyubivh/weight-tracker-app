@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:weight_management_app/common/snackbar.dart';
+import 'package:weight_management_app/core/common/snackbar.dart';
 import 'package:weight_management_app/helper/helper_functions.dart';
 import 'package:weight_management_app/service/auth_service.dart';
 import 'package:weight_management_app/views/auth/screens/auth_screen.dart';
-import '../../../common/custom_button.dart';
-import '../../../common/custom_textfield.dart';
-import '../../../common/loader.dart';
+import '../../../core/common/custom_button.dart';
+import '../../../core/common/custom_textfield.dart';
+import '../../../core/common/loader.dart';
 import '../../../core/colors/colors.dart';
 import '../../../core/consts.dart';
 import '../../../core/routes.dart';

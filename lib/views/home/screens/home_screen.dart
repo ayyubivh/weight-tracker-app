@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:weight_management_app/common/loader.dart';
+import 'package:weight_management_app/core/common/loader.dart';
 import 'package:weight_management_app/core/colors/colors.dart';
+import 'package:weight_management_app/core/common/shimmer.dart';
 import 'package:weight_management_app/service/auth_service.dart';
 import 'package:weight_management_app/service/database_service.dart';
 import 'package:weight_management_app/views/auth/screens/auth_screen.dart';
@@ -19,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   Stream? weights;
   String userName = "";
+
   @override
   void initState() {
     super.initState();
@@ -118,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return const EmptyWeights();
             }
           }
-          return const Loader();
+          return ShimmerWidget();
         },
       ),
       floatingActionButton: FloatingActionButton(

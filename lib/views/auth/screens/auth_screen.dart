@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:weight_management_app/common/custom_button.dart';
-import 'package:weight_management_app/common/custom_textfield.dart';
-import 'package:weight_management_app/common/loader.dart';
+import 'package:weight_management_app/core/common/custom_button.dart';
+import 'package:weight_management_app/core/common/custom_textfield.dart';
+import 'package:weight_management_app/core/common/loader.dart';
 import 'package:weight_management_app/core/consts.dart';
 import 'package:weight_management_app/core/routes.dart';
 import 'package:weight_management_app/service/auth_service.dart';
 import 'package:weight_management_app/service/database_service.dart';
-import '../../../common/snackbar.dart';
+import '../../../core/common/snackbar.dart';
 import '../../../core/colors/colors.dart';
 import '../../../helper/helper_functions.dart';
 import '../../home/screens/home_screen.dart';
@@ -42,7 +42,9 @@ class _AuthScreenState extends State<AuthScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset("asset/images/img1.jpg"),
+                        Container(
+                            height: 370,
+                            child: Image.asset("asset/images/img1.jpg")),
                         Text(
                           ' Welcome, \n Back',
                           style: TextStyle(
